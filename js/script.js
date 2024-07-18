@@ -77,17 +77,23 @@ const dxButton = document.getElementById('dx');
 
 // ascolto ( cosa 1 = evento, cosa 2 = cosa deve accadere)
 dxButton.addEventListener('click', function () {
-    // controllo che il click funzioni
-    console.log('clicco bottone dx');
 
-    // prendo l'immagine che attualmente ha la classe active e la elimino
-    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.remove('active');
+    //aggiunta di if per dire al click di procedere solo se dentro all'array
 
-    // aggiungo la variabile per cambiare la classe all'immagine
-    activeImmagine++;
+    if (activeImmagine < imgCarosello.length) {
+        // controllo che il click funzioni
+        console.log('clicco bottone dx');
 
-    // aggiungo la classe active al prossimo elemento dell'array
-    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.add('active');
+        // prendo l'immagine che attualmente ha la classe active e la elimino
+        document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.remove('active');
+
+        // aggiungo la variabile per cambiare la classe all'immagine
+        activeImmagine++;
+
+        // aggiungo la classe active al prossimo elemento dell'array
+        document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.add('active');
+    }
+
 });
 
 // aggiunta bottone sx, a cui cambio solo la variabile, che deve decrementare
@@ -96,9 +102,12 @@ const sxButton = document.getElementById('sx');
 
 sxButton.addEventListener('click', function () {
 
-    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.remove('active');
+    if (activeImmagine > 1) {
 
-    activeImmagine--;
+        document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.remove('active');
 
-    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.add('active');
+        activeImmagine--;
+
+        document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.add('active');
+    }
 });
