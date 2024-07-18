@@ -50,6 +50,17 @@ const imgCarosello = [
 for (let i = 0; i < imgCarosello.length; i++) {
     console.log('imgCarosello[i]', imgCarosello[i], typeof imgCarosello[i])
 
-    // una volta lette le immagini, devo scriverle in nel loro div "immagini" usando l'src contenuto nell'array:
-    immagini.innerHTML += `<img src="${imgCarosello[i]}">`;
+    // aggiunta di if per impostare la classe active
+    // per dare active alla prima foto, i deve essere uguale a 0, che è il primo elemento dell'array
+    if (i == 0) {
+
+        // una volta lette le immagini, devo scriverle in nel loro div "immagini" usando l'src contenuto nell'array:
+
+        // aggiungo la classe active
+        immagini.innerHTML += `<img src="${imgCarosello[i]}" class="active">`;
+
+    }
+    else {
+        immagini.innerHTML += `<img src="${imgCarosello[i]}">`;
+    }
 };
