@@ -59,8 +59,26 @@ for (let i = 0; i < imgCarosello.length; i++) {
         // aggiungo la classe active
         immagini.innerHTML += `<img src="${imgCarosello[i]}" class="active">`;
 
+        // altrimenti, "scrivi" solo l'immagine senza classe
     }
     else {
         immagini.innerHTML += `<img src="${imgCarosello[i]}">`;
     }
 };
+
+// per cambiare immagine con i bottoni, devo "ascoltare" il click
+// quindi dichiaro i bottoni, parto dal bottone di destra
+
+const dxButton = document.getElementById('dx');
+
+// ascolto ( cosa 1 = evento, cosa 2 = cosa deve accadere)
+dxButton.addEventListener('click', function () {
+    // controllo che il click funzioni
+    console.log('clicco bottone dx');
+
+    // prendo l'immagine che attualmente ha la classe active e la elimino
+    document.querySelector().classList.remove('active');
+
+    // aggiungo la classe active al prossimo elemento dell'array
+    document.querySelector().classList.add('active');
+});
