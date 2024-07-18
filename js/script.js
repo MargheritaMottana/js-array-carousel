@@ -19,11 +19,11 @@ Al click dell'utente sulle frecce, il programma cambierà l'immagine attiva, che
 
 /*
 
-Step 1  - Scrivere html con immagini, poi commentare la sezione
+Step 1  - Scrivere html con immagini, poi commentare la sezione (per poterla inserire da js)
         - scrivere in html bottoni per scorrere
 
-Step 2 - In css rendere invisibili tutte le immagini
-       - Creare in css una classe che mi permetta di rendere visibile un'immagine
+Step 2 - In css rendere invisibili tutte le immagini con "display: none"
+       - Creare in css una classe che mi permetta di rendere visibile un'immagine con "display: block"
 
 Step 3 - Scrivere in JS, un array con tutte le immagini che si vedranno nel carosello
 
@@ -32,3 +32,24 @@ Step 4 - Scrivere Js un ciclo che legga tutte le immagini dell'array
 Step 5 - ascoltando il click su un bottone, riprendendo la classe css, rendere visibile l'immegine successiva o precedente
 
 */
+
+// dichiaro il contenitore delle immagini
+const immagini = document.querySelector('.immagini');
+console.log('immagini', immagini, typeof immagini)
+
+// array con tutte le immagini (e dei loro percorsi)
+const imgCarosello = [
+    'img/01.webp',
+    'img/02.webp',
+    'img/03.webp',
+    'img/04.webp',
+    'img/05.webp',
+];
+
+// creare ciclo for per leggere tutte le immagini
+for (let i = 0; i < imgCarosello.length; i++) {
+    console.log('imgCarosello[i]', imgCarosello[i], typeof imgCarosello[i])
+
+    // una volta lette le immagini, devo scriverle in nel loro div "immagini" usando l'src contenuto nell'array:
+    immagini.innerHTML += `<img src="${imgCarosello[i]}">`;
+};

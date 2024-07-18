@@ -23,7 +23,7 @@ h2 {
 .carosello {
     width: 80%;
     height: 90%;
-    padding: 10px;
+    padding: 10px 10px 0 10px;
     border: 1px solid black;
     border-radius: 20px;
     /* debug */
@@ -56,13 +56,22 @@ img {
 }
 
 button {
+    width: 30px;
+    height: 30px;
     font-size: 1.2rem;
+    line-height: 30px;
     color: black;
     background-color: white;
     border: 1px solid black;
-    border-radius: 20px;
-    padding: 5px;
-    margin: 5px;
+    border-radius: 30px;
+}
+
+#sx {
+    margin-right: 5px;
+}
+
+#dx {
+    margin-left: 5px;
 }
 
 button:hover {
