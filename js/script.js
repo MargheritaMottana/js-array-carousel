@@ -66,6 +66,10 @@ for (let i = 0; i < imgCarosello.length; i++) {
     }
 };
 
+// aggiunta variabile per ricordarmi l'immagine attualmente attiva
+// questo mi permetterà di poter incrementare con ++ e di cambiare l'immagine attiva
+let activeImmagine = 1;
+
 // per cambiare immagine con i bottoni, devo "ascoltare" il click
 // quindi dichiaro i bottoni, parto dal bottone di destra
 
@@ -77,8 +81,24 @@ dxButton.addEventListener('click', function () {
     console.log('clicco bottone dx');
 
     // prendo l'immagine che attualmente ha la classe active e la elimino
-    document.querySelector().classList.remove('active');
+    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.remove('active');
+
+    // aggiungo la variabile per cambiare la classe all'immagine
+    activeImmagine++;
 
     // aggiungo la classe active al prossimo elemento dell'array
-    document.querySelector().classList.add('active');
+    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.add('active');
+});
+
+// aggiunta bottone sx, a cui cambio solo la variabile, che deve decrementare
+
+const sxButton = document.getElementById('sx');
+
+sxButton.addEventListener('click', function () {
+
+    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.remove('active');
+
+    activeImmagine--;
+
+    document.querySelector('.immagini > img:nth-child(' + activeImmagine + ')').classList.add('active');
 });
